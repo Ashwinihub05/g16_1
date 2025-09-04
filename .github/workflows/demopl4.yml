@@ -21,4 +21,4 @@ jobs:
         
       - name: step2
         run: |
-          echo "the value for repovar1: $repovar1"
+          echo "the value for repovar1: ${{vars.repovar1}}"
