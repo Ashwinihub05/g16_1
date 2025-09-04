@@ -1,9 +1,14 @@
 # .github/workflows/generate-ascii.yml
 name: Generate ASCII Artwork
 on:
-  push:
-    branches:
-      - master
+    workflow_dispatch:
+        inputs:
+            loglevel:
+                description: 'Log level'
+                required: true
+                default: 'warning'    
+
+    
 env:
     workflowvar1: workflowvalue1
 
