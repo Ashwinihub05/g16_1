@@ -4,12 +4,18 @@ on:
   push:
     branches:
       - master
-
-concurrency:
-  group: production-deployment
-  cancel-in-progress: false
+  
 
 jobs:
+  deploy:
+    timeout-minutes: 1
+    runs-on: ubuntu-latest
+    steps:
+      - name: step3 timeout
+        run: echo "step3 timeout"
+      - name: step4 timeout
+        run: sleep 300s  
+           
   job1:
     runs-on: ubuntu-latest
     steps:
