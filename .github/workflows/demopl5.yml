@@ -5,6 +5,10 @@ on:
     branches:
       - master
 
+concurrency:
+  group: production-deployment
+  cancel-in-progress: true
+
 jobs:
   job1:
     runs-on: ubuntu-latest
