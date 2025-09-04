@@ -1,3 +1,5 @@
+# .github/workflows/generate-ascii.yml
+name: Generate matrix
 on:
   push:
   workflow_dispatch:
@@ -8,12 +10,12 @@ jobs:
     strategy:
       matrix:
         os: [ubuntu-latest, ubuntu-20.04, windows-latest]
-        image: [hello-world, alpine]
+        
     runs-on: ${{ matrix.os }}
     steps:
       - name: Echo Docker Details
         run: docker info
 
 
-      - name: Run ${{ matrix.image }} on ${{ matrix.os }}
-        run: docker run ${{ matrix.image }}
+      - name: Run on ${{ matrix.os }}
+        run: docker run ${{ matrix.os }}
